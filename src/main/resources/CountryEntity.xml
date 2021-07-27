@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="com.example.demo.entity.CountryEntity">
+        <table name="country" schema="public" catalog="springboot_new_db"/>
+        <attributes>
+            <id name="idCountry">
+                <column name="id_country" precision="-1"/>
+            </id>
+            <basic name="name">
+                <column name="name" nullable="false"/>
+            </basic>
+            <one-to-many name="citiesByIdCountry" mapped-by="countryByCountry"
+                         target-entity="com.example.demo.entity.CityEntity"/>
+        </attributes>
+    </entity>
+</entity-mappings>
